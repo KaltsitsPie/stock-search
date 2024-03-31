@@ -1,6 +1,7 @@
 import axios from "axios";
 
 // const url = "localhost:5001/stocks";
+axios.defaults.baseURL = `http://${window.location.hostname}:5001`;
 
 export async function getStockAutoComplete(symbol) {
   try {

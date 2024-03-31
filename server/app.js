@@ -18,11 +18,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 
-app.use("/stocks", router);
+// app.use("/stocks", router);
 
 const finnhubKey = "cnarddhr01ql0f8afcf0cnarddhr01ql0f8afcfg";
 const MONGO_URL = "mongodb+srv://Yanchen:do5Y9QM441xueofI@stocksearch3.luk9nug.mongodb.net/?retryWrites=true&w=majority&appName=StockSearch3";
-const PORT = process.env.PORT || 5001;
+const PORT = 5001;
 
 const connectDB = async () => {
     try {
