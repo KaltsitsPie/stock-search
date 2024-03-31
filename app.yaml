@@ -1,0 +1,15 @@
+runtime: nodejs20
+
+env_variables:
+  MONGO_URI: 'mongodb+srv://Yanchen:do5Y9QM441xueofI@stocksearch3.luk9nug.mongodb.net/?retryWrites=true&w=majority&appName=StockSearch3'
+  # SECRET_KEY: 'ilovepickles1235'
+
+handlers:
+  # Serve all static files with url ending with a file extension
+  - url: /(.*\..+)$
+    static_files: build/\1
+    upload: build/(.*\..+)$
+  # Catch all handler to index.html
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
