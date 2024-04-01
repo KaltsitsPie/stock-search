@@ -1,10 +1,14 @@
 import axios from "axios";
 
 // const url = "localhost:5001/stocks";
-axios.defaults.baseURL = `http://${window.location.hostname}:5001`;
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || "https://stock-search-server-tkztfas4gq-uc.a.run.app";
+
+console.log("axios default url: " + axios.defaults.baseURL);
 
 export async function getStockAutoComplete(symbol) {
+  
   try {
+    console.log("axios default url: " + axios.defaults.baseURL);
     const response = await axios.get("/get-auto-complete", {
       params: { symbol },
     });
@@ -16,6 +20,7 @@ export async function getStockAutoComplete(symbol) {
 }
 
 export async function getStockDetail(symbol) {
+  console.log("axios default url: " + axios.defaults.baseURL);
   try {
     const response = await axios.get("/get-stock-detail", {
       params: { symbol },
