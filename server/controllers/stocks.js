@@ -392,7 +392,7 @@ const getSummaryCharts = async (req, res) => {
   
   const fromFormatted = `${fromDate.getFullYear()}-${formatNumber(fromDate.getMonth()+1)}-${formatNumber(fromDate.getDate())}`;
   const toFormatted = `${toDate.getFullYear()}-${formatNumber(toDate.getMonth()+1)}-${formatNumber(toDate.getDate())}`;
-  const apiUrl = `https://api.polygon.io/v2/aggs/ticker/${symbol || "AAPL"}/range/${multiplier}/${timespan}/${fromFormatted}/${toFormatted}?adjusted=true&sort=asc&apiKey=q3e0Rj8gdrA6x0yJTrDpJL8hQ1WbrNdL`;
+  const apiUrl = `https://api.polygon.io/v2/aggs/ticker/${symbol || "AAPL"}/range/${multiplier}/${timespan}/${fromFormatted}/${toFormatted}?adjusted=true&sort=asc&apiKey=${finnhubKey2}`;
   try {
     const response = await axios.get(apiUrl);
     res.json(response.data);

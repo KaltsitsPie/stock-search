@@ -3,7 +3,6 @@ import { deleteRemoveFromWatchlist, get2yearsCharts, getAutoComplete, getInsight
 
 const router = Router();
 
-// :5001/stocks
 router.get("/get-auto-complete", getAutoComplete);
 
 router.get("/get-stock-detail", getStockDetail);
