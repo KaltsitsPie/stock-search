@@ -156,7 +156,7 @@ const SearchDetail = () => {
     setSellQuantity(value);
   };
 
-  const fetchDetailAndSummaryData = async (symbol, forcedUpdate=false) => {
+  const fetchDetailAndSummaryData = (symbol, forcedUpdate=false) => {
     const savedSymbol = localStorage.getItem("savedSymbol");
     console.log("看这里! ")
     console.log("savedSymbol; " + savedSymbol);
@@ -181,6 +181,7 @@ const SearchDetail = () => {
       setDetail(savedDetail);
       summaryCharts.current = savedSummaryCharts;
       setIsChartsDataLoaded(true);
+      setIsPageLoading(false);
     } else {
       console.log(
         "call api, saved symbol: " +
@@ -219,12 +220,14 @@ const SearchDetail = () => {
             status,
             closeTimeStamp: data.t * 1000,
           };
-          await apiGetSummaryCharts(reqBody).then((data) => {
+          // console.log("将要： apiGetSummaryCharts");
+          apiGetSummaryCharts(reqBody).then((data) => {
             //   apiCountNow = apiCountNow + 1;
             //   if (apiCount === apiCountNow) setIsPageLoading(false);
             setIsChartsDataLoaded(true);
             summaryCharts.current = data;
             localStorage.setItem("savedSummaryCharts", JSON.stringify(data));
+            setIsPageLoading(false);
             console.log("savedSummaryCharts:  ", data);
           });
         } else {
@@ -405,10 +408,8 @@ const SearchDetail = () => {
     let apiCountNow = 0;
     const savedSymbol = localStorage.getItem("savedSymbol");
     setIsPageLoading(true);
-    fetchDetailAndSummaryData(ticker).then(() => {
-    //   apiCountNow = apiCountNow + 2;
-    //   if (apiCount === apiCountNow) setIsPageLoading(false);
-    });
+    // console.log("将要: fetchDetailAndSummaryData");
+    fetchDetailAndSummaryData(ticker);
 
     fetchIsTickerFoundInWatchlist(ticker).then(() => {
     });
@@ -466,7 +467,8 @@ const SearchDetail = () => {
   useEffect(() => {
     console.log("[detail, summaryCharts.current] change");
     if (detail !== undefined && detail && detail.ticker !== undefined && summaryCharts.current !== undefined && summaryCharts.current) {
-        setIsPageLoading(false);
+      // console.log("加载完毕, 隐藏load page,  summaryCharts.current");  
+      // setIsPageLoading(false); 
     }
   }, [detail, summaryCharts.current]); 
 

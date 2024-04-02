@@ -388,11 +388,16 @@ const getSummaryCharts = async (req, res) => {
   if (!isOpen && closeTimestamp !== undefined) {
     toDate = new Date(closeTimestamp);
   }
+  if (toDate.getDay() === 1) {
+    toDate = new Date(toDate.getTime() - 3 * 24 * 60 * 60 * 1000);
+  }
   let fromDate = new Date(toDate.getTime() - 24 * 60 * 60 * 1000);
   
   const fromFormatted = `${fromDate.getFullYear()}-${formatNumber(fromDate.getMonth()+1)}-${formatNumber(fromDate.getDate())}`;
   const toFormatted = `${toDate.getFullYear()}-${formatNumber(toDate.getMonth()+1)}-${formatNumber(toDate.getDate())}`;
   const apiUrl = `https://api.polygon.io/v2/aggs/ticker/${symbol || "AAPL"}/range/${multiplier}/${timespan}/${fromFormatted}/${toFormatted}?adjusted=true&sort=asc&apiKey=${polygonKey2}`;
+  // console.log("8080 get-summary-charts, query: ", req.query);
+  // console.log("8080 get-summary-charts, url: ", apiUrl);
   try {
     const response = await axios.get(apiUrl);
     res.json(response.data);
@@ -467,6 +472,7 @@ const get2yearsCharts = async (req, res) => {
   const fromFormatted = `${fromDate.getFullYear()}-${formatNumber(fromDate.getMonth()+1)}-${formatNumber(fromDate.getDate())}`;
   const toFormatted = `${toDate.getFullYear()}-${formatNumber(toDate.getMonth()+1)}-${formatNumber(toDate.getDate())}`;
   const apiUrl = `https://api.polygon.io/v2/aggs/ticker/${symbol || "AAPL"}/range/${multiplier}/${timespan}/${fromFormatted}/${toFormatted}?adjusted=true&sort=asc&apiKey=${polygonKey2}`;
+  // console.log("8080 get-charts, url: ", apiUrl);
   try {
     const response = await axios.get(apiUrl);
     res.json(response.data);
