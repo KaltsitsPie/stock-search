@@ -2,6 +2,8 @@
 
 This project is developed using MERN stack (MongoDB, Express, React, Node.js) 
 
+[Try it!](https://stock-search-yanchen.wl.r.appspot.com/)
+
 In this webpage, users can search stock by ticker symbol and get information about this stock. Also, users can star a stock for later recheck, buy and sell stocks using money in wallet (Of crouse it's not true :-D) 
 
 Three parts in the webpage: 
