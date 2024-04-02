@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Stock Search Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is developed using MERN stack (MongoDB, Express, React, Node.js) 
 
-## Available Scripts
+In this webpage, users can search stock by ticker symbol and get information about this stock. Also, users can star a stock for later recheck, buy and sell stocks using money in wallet (Of crouse it's not true :-D) 
 
-In the project directory, you can run:
+Three parts in the webpage: 
 
-### `npm start`
+## Search page / Homepage
+Users can search stock here:
+![search page](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/homepage1.8vmosg7j7l.webp)
+![search page](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/hpmepage2.lvi48mwoa.webp)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Summary Tab
+![Summary](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/summary.361cgvpvep.webp)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Top News Tab
+Users can see latest news about this company, and share this news to social media (facebook, or X).
+![top news](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/newsnews.4n7hin011o.webp)
+![share](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/topnews2.4jnvkx0xff.webp)
 
-### `npm test`
+#### Charts Tab
+Users can view the historial price and volumn in the past two years.
+![charts](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/charts.2ruwq0hkjc.webp)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Insights Tab
+![insights](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/insights.9nzka70unq.webp)
 
-### `npm run build`
+## Watchlist Menu
+Users can see all the stocks they starred, and check the change of stocks.
+![watch list](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/watch.7egjqq7h3o.webp)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Portfolio Menu
+Users can buy and sell here.
+![Portfolio](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/portfolio.6pna6pjy37.webp)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Responsive
+Responsive Design for smaller screen (like mobile phone).
+![](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/res2.7p2dechoy.webp)
+![](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/res3.2kroulqavf.webp)
+![](https://github.com/KaltsitsPie/picx-images-hosting/raw/master/res1.39kyemdtw4.webp)
