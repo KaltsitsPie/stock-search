@@ -113,8 +113,8 @@ const [ groupingUnitsData, setGroupingUnitsData ] = useState([]);
     series: [
       {
         type: "candlestick",
-        name: "AAPL",
-        id: "aapl",
+        name: `${hCharts.ticker || "AAPL"}`,
+        id: "ohlc",
         zIndex: 2,
         data: ohlcData,
       },
@@ -127,7 +127,7 @@ const [ groupingUnitsData, setGroupingUnitsData ] = useState([]);
       },
       {
         type: "vbp",
-        linkedTo: "aapl",
+        linkedTo: "ohlc",
         params: {
           volumeSeriesID: "volume",
         },
