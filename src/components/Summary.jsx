@@ -13,7 +13,7 @@ const Summary = ({ detail, companyPeers, charts }) => {
     for (let i = 0; i < dataLength; i += 1) {
       pricesArr.push([
         charts.results[i].t, // date
-        charts.results[i].c, // volume
+        charts.results[i].c, // price
       ]);
     }
     setPrices(pricesArr);
@@ -93,7 +93,6 @@ const Summary = ({ detail, companyPeers, charts }) => {
       {
         name: "Stock Price",
         type: "line",
-        // yAxis: 1,
         data: prices,
         color: detail.change > 0 ? "green" : "red",
         showInLegend: false,

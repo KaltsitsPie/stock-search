@@ -220,10 +220,7 @@ const SearchDetail = () => {
             status,
             closeTimeStamp: data.t * 1000,
           };
-          // console.log("将要： apiGetSummaryCharts");
           apiGetSummaryCharts(reqBody).then((data) => {
-            //   apiCountNow = apiCountNow + 1;
-            //   if (apiCount === apiCountNow) setIsPageLoading(false);
             setIsChartsDataLoaded(true);
             summaryCharts.current = data;
             localStorage.setItem("savedSummaryCharts", JSON.stringify(data));
