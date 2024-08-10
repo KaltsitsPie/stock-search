@@ -119,7 +119,6 @@ const Watchlist = () => {
 
   const handleSell = () => {
     setIsSellModalShow(false);
-    setSellQuantity(0);
     const stock = getTicker();
     // if (choosenIndex >= 0) {
     // const stock = stocks[choosenIndex];
