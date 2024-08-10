@@ -216,6 +216,7 @@ const resetWallet = async(req, res) => {
       await portfolio.save();
     }
     portfolio.wallet = 25000;
+    portfolio.stocks = []
     await portfolio.save();
     res.json({ success: "true" });
   } catch (error) {
@@ -316,7 +317,7 @@ const postSellStock = async (req, res) => {
       const preStock = portfolio.stocks[existingStockIndex];
       const newQuantity = Number(preStock.quantity - quantity);
       const newTotalCost = Number(preStock.totalCost - totalCost);
-      if (newQuantity < 0 || newTotalCost < 0) {
+      if (newQuantity < 0) {
         json = {
           success: false,
           stock: portfolio.stocks[existingStockIndex],
